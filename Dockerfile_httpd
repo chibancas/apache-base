@@ -1,0 +1,5 @@
+FROM httpd:2.4
+COPY ./web/ /usr/local/apache2/htdocs
+RUN chown -R www-data /usr/local/apache2/htdocs
+RUN chmod u+x -R www-data /usr/local/apache2/htdocs
+RUN apt-get update && apt-get install -y php php-mysql php-json php-common php-gd php-zip php-cli
